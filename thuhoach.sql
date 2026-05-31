@@ -1,6 +1,6 @@
 -- tao csdl
-CREATE DATABASE IF NOT EXISTS hackathon;
-USE hackathon;
+CREATE DATABASE IF NOT EXISTS bthuhoacch;
+USE bthuhoacch;
 
 -- bang creator
 CREATE TABLE Creator (
@@ -71,12 +71,14 @@ INSERT INTO Payment (payment_id, session_id, payment_method, payment_amount, pay
 (5, 5, 'Cash', 25.00, '2025-05-05');
 
 -- cap nhat platform cr03
+SET SQL_SAFE_UPDATES = 0;
 UPDATE Creator SET creator_platform = 'YouTube' WHERE creator_id = 'CR03';
 
 -- cap nhat studio st05
 UPDATE Studio SET studio_status = 'Available', hourly_price = hourly_price * 0.9 WHERE studio_id = 'ST05';
 
 -- xoa payment cash truoc mùng 3
+
 DELETE FROM Payment WHERE payment_method = 'Cash' AND payment_date < '2025-05-03';
 
 -- cau 6: studio available gia > 20
